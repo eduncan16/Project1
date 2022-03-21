@@ -6,7 +6,7 @@ import System.Maintenance.MaintenanceOrder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UseSchedule {
+public class UseSchedule implements UseScheduleInterface{
     private Facility facility;
     private List<UseRequest> requests = new ArrayList<UseRequest>();
 
@@ -28,5 +28,4 @@ public class UseSchedule {
     public List<UseRequest> getUseRequests(){
         return requests;
     }
-
 }

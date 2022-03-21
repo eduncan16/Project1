@@ -1,6 +1,6 @@
 package System.Facility;
 
-public class Facility {
+public class Facility implements FacilityInterface{
     private int facilityID;
     private FacilityDetails details;
 

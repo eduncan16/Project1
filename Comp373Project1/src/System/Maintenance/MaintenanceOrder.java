@@ -1,7 +1,7 @@
 package System.Maintenance;
 import java.util.Date;
 
-public class MaintenanceOrder {
+public class MaintenanceOrder implements MaintenanceOrderInterface{
     private MaintenanceRequest request;
     private MaintenanceCost cost;
     private Date startDate;
@@ -13,7 +13,7 @@ public class MaintenanceOrder {
     }
 
     public MaintenanceOrder(){}
-
+    public MaintenanceRequest getOrder() {return request;}
 
     public void setStartDate(Date startDate){
         this.startDate = startDate;

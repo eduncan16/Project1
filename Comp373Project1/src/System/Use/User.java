@@ -2,7 +2,7 @@ package System.Use;
 
 import System.Facility.Facility;
 
-public class User {
+public class User implements UserInterface{
     private Facility facility;
     private UseSchedule schedule;
     private String name;
