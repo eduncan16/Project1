@@ -10,7 +10,21 @@
 	<context:component-scan base-package="System" />
 	
 	<bean id="Facility" class="System.Facility.Facility" scope="prototype"/>
-	<bean id="FacilityDetails" class="System.Facility.FacilityDetails" scope="prototype"/>
+	<bean id="FacilityDetails" class="System.Facility.FacilityDetails" scope="prototype">
+		<property name="facilityName" >
+				  <value>"Facility1"</value>
+		</property>
+		<property name="facilityIDNumber" >
+			<value>1</value>
+		</property>
+		<property name="address" >
+			<value>"1111 1st st"</value>
+		</property>
+		<property name="capacity" >
+			<value>1</value>
+		</property>
+	</bean>
+
 	<bean id= "FacilityManager" class="System.Facility.FacilityManager" scope="prototype"/>
 	<bean id= "FacilityType" class="System.Facility.FacilityType" scope="prototype"/>
 
@@ -25,11 +39,4 @@
 	<bean id= "UserType" class="System.Use.UserType" scope="prototype"/>
 	<bean id= "UseSchedule" class="System.Use.UseSchedule" scope="prototype"/>
 
-	<bean id="orderDetail" class="System.model.order.OrderDetailImpl" scope="prototype">
-		<property name="book" ref="book" />
-		<property name="quantity" >
-			<value>0</value>
-		</property>
-	</bean>
-	
 </beans>
