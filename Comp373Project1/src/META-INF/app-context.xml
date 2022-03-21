@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for the Facility Manager</description>
+
+	<context:component-scan base-package="System" />
+	
+	<bean id="Facility" class="System.Facility.Facility" scope="prototype"/>
+	<bean id="FacilityDetails" class="System.Facility.FacilityDetails" scope="prototype"/>
+	<bean id= "FacilityManager" class="System.Facility.FacilityManager" scope="prototype"/>
+	<bean id= "FacilityType" class="System.Facility.FacilityType" scope="prototype"/>
+
+	<bean id= "MaintenanceLog" class="System.Maintenance.MaintenanceLog" scope="prototype"/>
+	<bean id= "MaintenanceInspection" class="System.Maintenance.MaintenanceInspection" scope="prototype"/>
+	<bean id= "MaintenanceOrder" class="System.Maintenance.MaintenanceOrder" scope="prototype"/>
+	<bean id= "MaintenanceRequest" class="System.Maintenance.MaintenanceRequest" scope="prototype"/>
+
+	<bean id= "User" class="System.Use.User" scope="prototype"/>
+	<bean id= "UseRequest" class="System.Use.UseRequest" scope="prototype"/>
+	<bean id= "UserLog" class="System.Use.UserLog" scope="prototype"/>
+	<bean id= "UserType" class="System.Use.UserType" scope="prototype"/>
+	<bean id= "UseSchedule" class="System.Use.UseSchedule" scope="prototype"/>
+
+	<bean id="orderDetail" class="System.model.order.OrderDetailImpl" scope="prototype">
+		<property name="book" ref="book" />
+		<property name="quantity" >
+			<value>0</value>
+		</property>
+	</bean>
+	
+</beans>

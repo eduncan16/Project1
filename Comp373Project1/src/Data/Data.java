@@ -4,7 +4,7 @@ import System.Facility.Facility;
 import System.Facility.FacilityDetails;
 import System.Facility.FacilityManager;
 import System.Facility.FacilityType;
-import System.Maintenance.MaintenaceLog;
+import System.Maintenance.MaintenanceLog;
 import System.Maintenance.MaintenanceCost;
 import System.Maintenance.MaintenanceOrder;
 import System.Maintenance.MaintenanceRequest;
@@ -58,7 +58,7 @@ public class Data {
         group1.addFacility(one);
         System.out.println(group1.getFacility(1));
 
-        MaintenaceLog maintenaceLog = new MaintenaceLog();
+        MaintenanceLog maintenaceLog = new MaintenanceLog();
         MaintenanceRequest lights = new MaintenanceRequest();
         lights.setDescription("Light fixture broke");
         Date today = new Date(2020, 2, 28);
