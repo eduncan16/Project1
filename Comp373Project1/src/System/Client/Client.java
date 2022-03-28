@@ -25,6 +25,7 @@ public class Client {
         Facility facility1 = (Facility) context.getBean("Facility");
         facility1.setFacilityID(1);
         FacilityType facilityType = (FacilityType) context.getBean("FacilityType");
+        facilityType.setDescription("Manager");
         FacilityManager facilityManager = (FacilityManager) context.getBean("FacilityManager");
 
         FacilityDetails facilityDetails = facility1.getFacilityDetail();
@@ -80,19 +81,23 @@ public class Client {
         /**********************************************************************/
 
         // Print out all logs
+        System.out.println("\n*****************Facility*UserLog************************");
         for(int i=0; i<userLog.getLog().size(); i++){
             User dummy = userLog.getLog().get(i);
             System.out.println("Name:"+dummy.getName()+"\nFacility:Facility#"+dummy.getFacility().getFacilityID()+"\nType:"
                     +dummy.getUserType().getDescription());
         }
+        System.out.println("\n*****************Facility*MaintenanceLog************************");
         for(int i=0; i<maintenanceLog.getLog().size(); i++){
             MaintenanceOrder dummy = maintenanceLog.getLog().get(i);
             double x = dummy.getMaintenanceCost().getLaborCost();
             double y = dummy.getMaintenanceCost().getMaterialsCost();
             double z = x+y;
-            System.out.println("\nStartDate:"+dummy.getStartDate()+"\nEndDate:"+dummy.getFinishDate()+"\nTotalCost:"+z+
-                    "\nLaborCost:"+x+"\nMaterialsCost"+y);
+            int dum = i+1;
+            System.out.println("\nMaintenanceRequest#"+dum+"\nStartDate:"+dummy.getStartDate()+"\nEndDate:"+dummy.getFinishDate()+"\nTotalCost:$"+z+
+                    "\nLaborCost:$"+x+"\nMaterialsCost:$"+y);
         }
+        System.out.println("\n*****************Facility*UseSchedule************************");
         for(int i=0; i<useSchedule.getUseRequests().size(); i++){
             UseRequest dummy = useSchedule.getUseRequests().get(i);
             System.out.println("\nRequestDate:"+dummy.getRequestDate()+"\nStartDate:"+dummy.getStartDate()+
