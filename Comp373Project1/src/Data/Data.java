@@ -65,16 +65,16 @@ public class Data {
         lights.setRequestDate(today);
         MaintenanceOrder fixLight = new MaintenanceOrder(lights);
         MaintenanceCost lightCost = new MaintenanceCost();
-        lightCost.setlaborCost(80);
-        lightCost.setmaterialsCost(30);
+        lightCost.setLaborCost(80);
+        lightCost.setMaterialsCost(30);
         fixLight.setCost(lightCost);
         fixLight.setStartDate(today);
 
         System.out.println("----------------------");
 
         System.out.println(fixLight.getStartDate());
-        System.out.println(fixLight.getMaintenanceCost().getlaborCost());
-        System.out.println(fixLight.getMaintenanceCost().getmaterialsCost());
+        System.out.println(fixLight.getMaintenanceCost().getLaborCost());
+        System.out.println(fixLight.getMaintenanceCost().getMaterialsCost());
         System.out.println(fixLight.getStartDate());
         maintenaceLog.addOrder(fixLight);
 

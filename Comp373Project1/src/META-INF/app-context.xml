@@ -8,35 +8,51 @@
 	<description>Wiring the dependencies for the Facility Manager</description>
 
 	<context:component-scan base-package="System" />
-	
-	<bean id="Facility" class="System.Facility.Facility" scope="prototype"/>
+
 	<bean id="FacilityDetails" class="System.Facility.FacilityDetails" scope="prototype">
-		<property name="facilityName" >
-				  <value>"Facility1"</value>
-		</property>
-		<property name="facilityIDNumber" >
-			<value>1</value>
-		</property>
-		<property name="address" >
-			<value>"1111 1st st"</value>
-		</property>
-		<property name="capacity" >
-			<value>1</value>
-		</property>
+	</bean>
+
+	<bean id="Facility" class="System.Facility.Facility" scope="prototype">
+		<property name="facilityDetail" ref ="FacilityDetails"/>
 	</bean>
 
 	<bean id= "FacilityManager" class="System.Facility.FacilityManager" scope="prototype"/>
-	<bean id= "FacilityType" class="System.Facility.FacilityType" scope="prototype"/>
+
+	<bean id= "FacilityType" class="System.Facility.FacilityType" scope="prototype">
+		<property name="description">
+			<value>"Office Building"</value>
+		</property>
+	</bean>
+
+	<bean id= "MaintenanceCost" class="System.Maintenance.MaintenanceCost" scope="prototype">
+		<property name="materialsCost" >
+			<value>100</value>
+		</property>
+
+		<property name="laborCost" >
+			<value>50</value>
+		</property>
+
+	</bean>
 
 	<bean id= "MaintenanceLog" class="System.Maintenance.MaintenanceLog" scope="prototype"/>
 	<bean id= "MaintenanceInspection" class="System.Maintenance.MaintenanceInspection" scope="prototype"/>
 	<bean id= "MaintenanceOrder" class="System.Maintenance.MaintenanceOrder" scope="prototype"/>
 	<bean id= "MaintenanceRequest" class="System.Maintenance.MaintenanceRequest" scope="prototype"/>
 
-	<bean id= "User" class="System.Use.User" scope="prototype"/>
+	<bean id= "User" class="System.Use.User" scope="prototype" >
+		<property name="name">
+			<value>"Evan"</value>
+		</property>
+	</bean>
+
+
 	<bean id= "UseRequest" class="System.Use.UseRequest" scope="prototype"/>
+
 	<bean id= "UserLog" class="System.Use.UserLog" scope="prototype"/>
+
 	<bean id= "UserType" class="System.Use.UserType" scope="prototype"/>
+
 	<bean id= "UseSchedule" class="System.Use.UseSchedule" scope="prototype"/>
 
 </beans>

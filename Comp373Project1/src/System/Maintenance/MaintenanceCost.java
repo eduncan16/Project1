@@ -7,10 +7,10 @@ public class MaintenanceCost {
     public MaintenanceCost() {
     }
 
-    public void setlaborCost(double laborCost) {this.laborCost = laborCost;}
-    public double getlaborCost() {return laborCost;}
+    public void setLaborCost(double laborCost) {this.laborCost = laborCost;}
+    public double getLaborCost() {return laborCost;}
 
-    public void setmaterialsCost(double materialsCost) {this.materialsCost = materialsCost;}
-    public double getmaterialsCost() {return materialsCost;}
+    public void setMaterialsCost(double materialsCost) {this.materialsCost = materialsCost;}
+    public double getMaterialsCost() {return materialsCost;}
 
 }
